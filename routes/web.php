@@ -11,31 +11,11 @@
 |
 */
 
-//Route::get('/', ['as'=>'home.index', 'uses'=>'HomeController@index']);
-Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', ['as'=>'home.index','uses'=>'HomeController@index']);
 
+    Route::get('/about', ['as'=>'about.index','uses'=>'AboutController@index']);
 
-Route::get('welcome', function () {
-             return view('welcome');
-			 });
-
-
-Route::get('welcome', function () {
-	    return view('welcome');
-});
-		Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
-    return 'Hello, '.$name;
-}]);
-Route::get('dashboard', function () {
-    return 'dashboard';
-});
-
-Route::group(['prefix'=>'admin'], function () {
-    Route::get('dashboard', function () {
-                return 'admin dashboard';
-    });
-
-});
+    Route::get('/news', ['as'=>'news.index','uses'=>'NewsController@index']);
 
 
 
